@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <p><a href="/new">Post new message</a></p>
+        <div>
+            <% messages.forEach((message, index) => { %>
+                <%- include('messages/message', {message: message, index: index}); %>
+                <button onclick="window.location.href='/message/<%= index %>';">View Details</button>
+           <% }) %>
+        </div>
+    </body>
+</html>
