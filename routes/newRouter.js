@@ -1,11 +1,8 @@
 const { Router } = require("express");
+const { getNewMessagePage } = require("../controllers/newController")
 
 const newRouter = Router();
 
-
-newRouter.get("/", (req, res) => {
-  res.render("form", { title: "New Message" });
-});
-
+newRouter.get("/", getNewMessagePage);
 
 module.exports = newRouter;
